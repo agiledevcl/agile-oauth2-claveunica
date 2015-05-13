@@ -3,7 +3,7 @@
    	 * Ejemplo de implementación ClaveUnica
  	 * Author: Rodrigo Zenteno
  	 * Agile Ingeniería & Consultoría
- 	 * www.claveunica.cl     
+ 	 * www.agile.cl     
      */
 %>
 
@@ -26,6 +26,9 @@ String TOKEN_SERVER_URL = "https://www.claveunica.cl/oauth2/token";
 String RESOURCE_SERVER_URL="https://apis.modernizacion.cl/registrocivil/informacionpersonal/v1/info.php?access_token=";
 	AuthorizationCodeFlow authorization = (AuthorizationCodeFlow) pageContext.getAttribute("authorizationCodeFlow", PageContext.APPLICATION_SCOPE);
 	String authorizationCode=request.getParameter("code");
+	if(authorizationCode==null){
+	out.print("La operación de Clave Única ha sido Cancelada");
+	}
 	String returnToUrl = (String) pageContext.getAttribute("returnToUrl", PageContext.APPLICATION_SCOPE);
 	HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 	final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();	

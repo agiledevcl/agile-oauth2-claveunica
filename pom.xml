@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>cl.agile.utils</groupId>
   <artifactId>oauth2-simple</artifactId>
@@ -15,22 +14,48 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-	  <groupId>com.google.api-client</groupId>
-	  <artifactId>google-api-client</artifactId>
-	  <version>1.20.0</version>
-	</dependency>
-	<dependency>
-	  <groupId>com.google.api-client</groupId>
-	  <artifactId>google-api-client-jackson2</artifactId>
-	  <version>1.20.0</version>
-	</dependency> 
-	<dependency>
-	  <groupId>com.google.apis</groupId>
-	  <artifactId>google-api-services-oauth2</artifactId>
-	  <version>v2-rev91-1.20.0</version>
-	</dependency>	       
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client</artifactId>
+      <version>1.20.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client-jackson2</artifactId>
+      <version>1.20.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-oauth2</artifactId>
+      <version>v2-rev91-1.20.0</version>
+    </dependency>
   </dependencies>
   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <outputEncoding>UTF-8</outputEncoding>
+        </configuration>
+      </plugin>
+    </plugins>
     <finalName>oauth2-simple</finalName>
   </build>
 </project>
